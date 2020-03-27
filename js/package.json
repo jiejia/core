@@ -21,7 +21,8 @@
   },
   "scripts": {
     "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "format": "prettier --write src"
   },
   "devDependencies": {
     "prettier": "2.0.2"
