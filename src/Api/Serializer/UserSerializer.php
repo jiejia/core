@@ -36,7 +36,7 @@ class UserSerializer extends BasicUserSerializer
 
         $gate = $this->gate->forUser($this->actor);
 
-        $canEdit = $gate->allows('edit', $user);
+        $canEdit = $gate->allows('edit.credentials') || $gate->allows('edit.groups') || $gate->allows('edit.username') ? true : false;
 
         $attributes += [
             'joinTime'         => $this->formatDate($user->joined_at),
